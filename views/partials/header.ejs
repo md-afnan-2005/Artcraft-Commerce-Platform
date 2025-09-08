@@ -1,0 +1,544 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CraftHeaven</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+        <style>
+            .i{
+                height :80px;
+                width :80px;
+            }
+            .h3{
+                border-radius: 6px;
+                height :fit-content;
+                padding :6px;
+               font-size :20px;
+            }
+            .h1{
+                font-family: monospace;
+                font-size :20px;
+                font-weight :bold;
+                padding-right: 20px;
+            }
+            .a{
+                background-color :#2E587A;
+              
+                background-size :cover;
+            color :white;
+            }
+            .b{
+                color : #ffffff;
+                font-size :20px;
+            }
+          
+            .d{
+                margin-right :100px;
+            }
+            .e{
+                background-color: darkorange;
+                border-radius :15px;
+                height :50px;
+                width :120px;
+                
+            }
+            .f{
+                display:flex;
+                justify-content:center;
+                align-content:center;
+                text-align :center;
+            height: 100vh;
+            }
+            .afnan{
+                background-color :#ffffff;
+                border-radius :20px;
+                height :340px;
+                width :280px;
+                margin :5px;
+            margin-left: 10px;
+                border-color :black;
+                border-style :solid;
+               margin-top :20px;
+    
+            }
+           
+            .modal-content{
+                 width :5000px;
+                 height :600px;
+               }
+            .heading{
+                font-family :caveat;
+                font-weight :bold;
+                padding : 5px;
+                margin-left :30px;
+                font-size :50px;
+                text-align :center;
+               
+            }
+            .i1{
+                width :100%;
+                height :50%;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+            }
+            .head{
+                font-family:monospace;
+                padding :10px;
+                color :blue;
+            }
+            body{
+                background-color :#E2C3A2;
+                background-size: cover;
+                height :100vh;
+              font-family: Georgia, serif;
+            }
+            .j{
+                background-image :url("https://www.cyblance.com/portfolio/wp-content/uploads/2023/03/develop-ecommerce-blog-banner.jpg");
+                
+                background-size :contain;
+                height :100vh;
+                width :100%;
+                
+            }
+            .card{
+                background-color :transparent;
+                border-style: solid;
+                border-radius :16px;
+                border-color: black;
+                border-width :2px;
+                margin-top: 70px;
+                margin-right :150px;
+                width :500px;
+            }
+            .card1{
+                background-color :transparent;
+                border-style: solid;
+                border-color: black;
+                border-width :2px;
+                margin-top: 150px;
+                margin-left :250px;
+                width :500px;
+            }
+            h3{
+                font-size :20px;
+            }
+            .form-control{
+                background-color :transparent;
+                border-style: solid;
+                border-color: black;   
+                border-width :2px;
+                width :440px;
+            }
+            .c{
+                margin-left :60px;
+                width :500px;
+                border-radius :5px;
+                border-style:solid;
+                border-color :#ffffff;
+                border-width :5px;
+            }
+           .h{
+            color :black;
+            font-family :cursive;
+            font-weight :bold;
+            font-weight :20px;
+            
+           }
+           .bi{
+            height :150px;
+            width :150px;
+            margin-top :20px;
+           }
+           .afnan1{
+            display :grid;
+            grid-template-columns :auto auto auto auto auto;
+          
+           }
+           .afnan6{
+            display :grid;
+            grid-template-columns :auto auto auto auto;
+          
+           }
+           .i4{
+            height  :150px;
+            width :150px;
+            border-radius :80px;
+           }
+           .button{
+            height :80px;
+            width :400px;
+            font-size :30px;
+            font-weight :bold;
+            border-radius: 20px;
+            border-style: solid;
+            border-color :black;
+           }
+           .i2{
+            border-radius: 16px;
+            width :70%;
+            margin :10px;
+           }
+           .k{
+            height :150px;
+            width :2200px;
+            border-radius: 16px;
+            margin :5px;
+           }
+           .sun{
+            background-color :rgb(201, 232, 244);
+
+            border-radius: 16px;
+            height :500px;
+            width :98%;
+            margin-left :20px;
+            margin-bottom :10px;
+           }
+           .p1{
+            font-size :20px;
+            font-family :cursive;
+           }
+           .b3{
+            height :150px;
+            width :150px;
+            border-radius: 16px;
+            margin :5px;
+            margin-left :10px;
+           }
+           .d-block{
+            height :500px;
+            border-radius: 16px;
+            margin-left :40px;
+            margin-right :40px;
+            width :95%;
+            border-style :solid;
+            border-color: black;
+            border-width: 5px;
+           }
+           .bi{
+            margin-top :5px;
+            width :50px;
+            height :50px;
+            margin-left :20px;
+           }
+           .bi-instagram{
+            width :40px;
+            height :40px;
+            margin-top :8px;
+           }
+           .bi-share{
+            width :40px;
+            height :40px;
+            margin-top :8px;
+            margin-left :300px;
+           }
+            .o{
+            background-color: #ffffff;
+            height :40px;
+            width :40px;
+            }
+           
+           hr{
+            color :black;
+           }
+           .l{
+            background-color :#2E587A;
+           margin-top :20px;
+           font-size :20px;
+           }
+           p{
+            font-size :30px;
+           }
+           .ml{
+            margin-left :580px;
+           }
+           .ml1{
+            margin-left :0px;
+           }
+           .pt-4{
+            padding-top :50px;
+           }
+           .afnan3{
+            background-color: rgb(191, 212, 231);
+            background-size :cover;
+    
+           }
+           .i3{
+            border-radius: 10px;
+            margin :10px;
+           }
+           .b4{
+            margin-top :0px;
+           }
+           .b3{
+            margin-left :0px;
+            height :100px;
+            width :400px;
+           }
+           .card-container{
+            background-color :deepskyblue;
+            border-radius :16px;
+            height :600px;
+            width :44%;
+            margin-top: 50px;
+            border-width :5px;
+            border-style: solid;
+            border-color:#ffffff;
+            margin-left :130px;
+            padding :20px;
+            margin-right :80px;
+           }
+           .w{
+            width :50%;
+            padding :20px;
+            position:absolute;
+            top :40px;
+            height :100px;
+            right :40%;
+            
+           }
+           .i8{
+            height :100vh;
+            width :50%;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+           }
+           #exampleModalLabel{
+            font-family :helvetica neue;
+            font-weight :bold;
+            text-align :center;
+            text-decoration: underline;
+            font-size :30px;
+           }
+           
+           .b2{
+              height :50px;
+              width :200px;
+              border-radius: 6px;
+              font-size :20px;
+            }
+           .q{
+            background-image:url("https://codilime.com/static/60ddf1ef6b9b0534975d509883b647c5/header-2.png");
+            background-size: auto;
+            height :100vh;
+           }
+           .h8{
+            text-decoration :underline;
+           }
+           .i5{
+            height :300px;
+            width :300px;
+           }
+           .m{
+            background-color :aliceblue;
+            border-color: black;
+            width :350px;
+            height :570px;
+        
+            margin-left :100px;
+           }
+           .card-container10{
+            background-color :deepskyblue;
+           
+            height :600px;
+            width :44%;
+          
+            border-width :5px;
+            border-style: solid;
+            border-color:#ffffff;
+           
+            padding :20px;
+          
+           }
+           .rip{
+            background-color :#ffffff;
+            
+            width :auto;
+            height :auto;
+           }
+           .i9{
+            height :300px;
+            width :300px;
+            border-radius :16px;
+            border-style :solid;
+            border-color :rgb(8, 21, 3);
+            margin :10px;
+           }
+           .card-container1{
+            background-color: rgb(191, 212, 231);
+            background-size :cover;
+            margin-bottom:200px;
+           }
+           .i0{
+            width : 90%;
+           }
+           .x{
+            width :700px;
+            margin-right :10px;
+            height :500px;
+           }
+           .z{
+            margin-left :50px;
+           }
+           .y{
+            margin-left :50px;
+           }
+           .ml{
+            margin-left :580px;
+           }
+          .mn{
+            width :500px;
+          }
+          .oo{
+            background-color :#E2C3A2;
+            background-size :cover;
+         
+          }
+          .oye{
+            background-color :#ffffff;
+            height :100%;
+            width :80%;
+            margin :20px;
+          }
+          .oye1{
+            background-color :#ffffff;
+            height :520px;
+            width :20%;
+            margin :20px;
+            margin-bottom :100px;
+          }
+        .text-left{
+            font-family :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight :normal;
+            font-size :40px;
+        }
+        .i6{
+            width :300px;
+            padding-left :30px;
+            padding-bottom :30px;
+            padding-right :10px;
+            height :310px;
+        }
+        .de{
+            font-size :20px;
+        }
+        .ed{
+            font-size :15px;
+            color :green;
+            font-weight :bold;
+        }
+        .i09{
+            height :50px;
+            width :120px;
+            padding-top :0px;
+        }
+        .bt{
+            background-color :rgb(226, 194, 10);
+            width :250px;
+            border-color :none;
+            border-style: none;
+            color :black;
+            font-weight :normal;
+        }
+        .fish{
+            position: sticky; 
+            bottom: 0; 
+        }
+        .oye2{
+             width :40%;
+             height :auto;
+        }
+        .mahesh{
+            margin-bottom :100px;
+        }
+        .xz{
+            margin-left :400px;
+        }
+        .oye3{
+            width :200px;
+            height :200px;
+            border-radius: 5px;
+            background-color :rgb(197, 217, 234);
+            margin :5px;
+        }
+        .xor{
+            height :100vh;
+        }
+       .quel{
+        height :auto;
+        width :auto;
+        border-style :solid;
+        border-radius :4px;
+        border-color :black;
+        border-width :2px;
+     
+        }
+       .rip1{
+            height :100%;
+        }
+        .star-rating {
+  display: inline-block;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 100px;
+  cursor: pointer;
+  color: white;
+}
+
+.star-rating label:before {
+  content: '\2605';
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+  color: #ffcc00;
+}
+.plo{
+    padding-left :260px;
+}
+.plo1{
+    padding-left :840px;
+}
+.btn-light{
+    border-radius :3px;
+    border-style :solid;
+    border-color :black;
+    height :40px;
+}
+.btn-light1{
+    border-radius :3px;
+    border-style :solid;
+    border-color :black;
+    height :40px;
+    width :200px;
+}
+.rip9{
+    height :auto;
+    width :auto;
+    
+}
+.navbar{
+    
+    position:sticky; 
+
+        top: 0; 
+       
+}
+.sw{
+    padding-left :400px;
+}
+.sun1{
+    background-color: #E2C3A2;
+}
+        </style>
+    </head>
+    <body >
