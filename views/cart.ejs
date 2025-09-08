@@ -1,0 +1,147 @@
+<!---->
+
+
+<%- include('partials/header')%>
+
+<%var total=0%>
+<%cartproducts.forEach((data) =>{%>
+ 
+  <div class="oo">
+  <div class="d-flex flex-row">
+  
+  <div class="card-container1 oye shadow">
+    <div class="d-flex flex-row">
+      <h1 class="heading  text-left"><%=data.title%></h1>
+   
+      <h3 style="color :rgb(126, 129, 131); margin-left :800px;padding-top :30px;">Price</h3>
+    </div>
+    <hr color="black" width="1100px;">
+<div class="d-flex flex-column">
+<div class="d-flex flex-row">
+  <img src="<%=data.images%>" class="i5 i6"/>
+  <div class="d-flex flex-column pl-2">
+    <h2 class="de"><%=data.description%></h2>
+    <img src="https://miro.medium.com/v2/resize:fit:1134/1*_R-1z-SdxWqQghR3uTy-7w.png" class="i09"/>
+    <p class="ed">In Stock<br>
+      <span style="color :black; font-size :20px;">Eligibility for FREE Shipping</span></p>
+      <div class="d-flex flex-row">
+      <input type="checkbox" name="check" value="<%=data.price%>"class="mb-3 p-4">
+      <p class="de">This will be a Gift <a href="">Learn More</a></p>
+    </div>
+    <p class="de"><span style="color :black; font-size :20px;font-weight :bold;">Size:</span> Cabin | 55 cm | Small</p>
+    <div class="d-flex flex-row">
+    <div>
+      <form action="/cart" method="post">
+      <label for="quantity" style="color :black; font-size :20px;font-weight :bold;">Quantity</label>
+      <select name="quantity">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+      </select>
+      </form>
+    </div>
+    <div class="pl-5">
+      <form action="/cartdelete" method="post">
+        <button href=""class="pl-3 pr-3" name="del" value="<%=data.productid%>">Delete</button>
+     </form>
+     <a href=""class="pl-3 pr-3">Save for Later</a>
+     <a href=""class="pl-3 pr-3">See more like this</a>
+     <a href=""class="pl-3 pr-3">Share</a>
+    </div>
+  </div>
+  
+</div>
+<div class="d-flex flex-column">
+ 
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtuzYbndhUraosBS5sCwglLSYuMaguHtPv_g&usqp=CAU" class="i09"/>
+    <h2 class="de" style="color :rgb(174, 12, 12); font-weight :bold;font-size :20px;">Limited Deal Soon</h2>
+    <h2 class="de" style="font-weight :bold;"><%=data.price%></h2>
+    <p class="de">M.R.P : <span style="text-decoration:line-through;">4,743</span></p>
+
+</div>
+ </div>
+ <hr color="black" width="1100px;">
+ <div class="d-flex flex-row justify-content-end">
+  <%total=total+parseInt(data.price)%>
+  <p class="de pr-3">Subtotal :<span style="font-weight :bold;"><%=data.price%></span></p>
+ </div>
+</div>
+  
+</div>
+ 
+</div>
+</div>
+<%})%>
+
+
+
+<div class="card-container1 oye1 shadow p-3">
+  <div class="d-flex flex-column">
+    <div class="d-flex flex-row">
+      <img src="https://i.pinimg.com/736x/7b/dd/1b/7bdd1bc7db7fd48025d4e39a0e2f0fd8.jpg" class="i09" style="height :30px; width :30px;"/>
+      <p class="ed">Your order is eligible for FREE Delivery.</p>
+    </div>
+    <p class="de" style="font-size :15px;">Select this option at checkout.<a href="">Details</a></p>
+    <p class="de">Subtotal :   <span style="font-weight :bold;"><%=total%></span></p>
+  <div class="d-flex flex-row">
+    <input type="checkbox" name="check" value=""class="mb-3 p-4">
+    <p class="de">This order contains a Gift</p>
+  </div>
+  <form action="/buy" method="get">
+    <button type="submit" name="total" value="<%=total%>" class="btn btn-warning button b2 bt">Proceed to Buy</button>
+  </form>
+     <h2 class="de pt-2">EMI Available</h2>
+     <p class="de">Your order qualifies for EMI with valid credit cards (not available on purchase of Gold, Jewelry, Gift cards and Amazon pay balance top up). <a href="">Learn more</a></p>
+ 
+  </div>
+</div>
+
+<h1 class="heading h8">Similar Products</h1>
+<div class="d-flex flex-row">
+ <div class="afnan6">
+   <%rand.forEach((product) =>{%>
+    
+    <div class=" d-flex flex-column ml-4 mb-4">
+      <div class="card-container10 rip d-flex flex-column text-dark">
+        <img src="<%=product.images%>" class="i5"/>
+        <div class="d-flex flex-row">
+          <h3 style="font-size :25px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;">Name:</h3>
+          <span style="font-size :20px;  padding :4px;"><%=product.title%></span><br>
+        </div>
+        
+         <div class="d-flex flex-row">
+          <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Price : </h3>
+          <span style="font-size :20px; ;  padding :4px;"><%=product.price%></span><br>
+         </div>
+         <div class="d-flex flex-row">
+          <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Product Availiability : </h3>
+          <span style="font-size :20px; ;  padding :4px;"><%=product.availability%></span><br>
+         </div>
+         <div class="d-flex flex-row">
+          <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Category : </h3>
+          <span style="font-size :20px; ;  padding :4px;"><%=product.category%></span><br>
+         </div>
+         <form action="/productpage" method="post">
+            <button name="green" value="<%=product.productid%>" class="user-link btn btn-success">View more</button>
+          </form> 
+      </div>
+    </div>
+
+   <%})%>
+  </div>
+  
+</div>
+
+
+
+<div class="d-flex flex-row justify-content-center fish">
+  <form action="/product" method="get">
+    <button class="button b2 btn btn-danger">Back to Previous</button>
+  </form>
+  <form action="/craftmen" method="get">
+  <button class="button b2 btn btn-danger ml-3">Back to Home</button>
+</form>
+</div>
+<%- include('partials/footer') %>

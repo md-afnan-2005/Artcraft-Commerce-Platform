@@ -1,0 +1,272 @@
+<%- include('partials/header')%>
+
+
+<h1 class="heading mb-0">Checkout</h1>
+<div class="d-flex flex-row">
+         <div class="card-container1 oye p-5 rip1">
+            <div class="d-flex flex-row">
+               <h3 style="color :rgb(26, 13, 6); font-weight :bold;font-size :25px;">1 Delivery address</h3>
+               <p class="de plo"><span style="font-weight:bold;"><%=delivery.name%></span><br><%=delivery.flat%>,<%=delivery.area%>,<br><%=delivery.town%>, <%=delivery.mobile%><br><%=delivery.state%>,<%=delivery.pincode%><br><a href="">Add delivery instructions</a></p>
+               <a href="" class="plo" style="font-size :25px; color :green ;font-weight :bold;">Change</a>
+            </div>
+            <hr color="black">
+            <h3 style="color :rgb(188, 77, 22); font-weight :bold;font-size :25px;">2 Select a payment method</h3>
+            <div class="quel p-4"  style="background-color: rgb(252, 237, 218);">
+                <h3 style="color :rgb(26, 13, 6); font-weight :bold;font-size :25px;">Your available balance</h3>
+                <hr color="black">
+                <div class="d-flex flex-row pb-3">
+                    <img src="https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-vector-add-icon-png-image_925895.jpg" class="i09 m-2" style=" height :40px;"/>
+                    <input type="text" name="Enter Code" class="shadow m-2 btn-light1"  id="Enter Code">
+                    <button class="btn btn-light shadow m-2">Apply</button>
+                </div>
+               
+                <div>
+                    <%if(locals.carddetails){%>
+                        <h3 style="color :rgb(26, 13, 6); font-weight :bold;font-size :25px; padding-bottom :15px;">CREDIT & DEBIT CARDS</h3>
+                        <div class="d-flex flex-row justify-content-end">
+                            <p style="font-size :15px;">NickName</p>
+                        </div>
+                        <hr color="black">
+                        <input type="radio" name="det" checked>
+                       <lable style="font-weight :bold; font-size :20px;"><%=carddetails.bank%> Debit Card <span style="font-weight :normal">ending in 1213</span></lable><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Rupay-Logo.png/1200px-Rupay-Logo.png" class="i09 m-2" style=" height :40px;"/> <lable style="font-weight :bold; font-size :20px; padding-left :300px;"><%=carddetails.type%></lable> <lable style="font-weight :bold; font-size :20px;">      <%=carddetails.name%></lable><br>
+                      
+                        <label for="cvv" style="font-size :20px;">Enter CVV(?):</label>
+                        <input type="text" name="cvv no">
+                        <form action="/verify" method="post">
+                          <button  type="submit" name="ver" value="ver1">Verify</button>
+                        </form>
+                        <div class="d-flex flex-row p-3">
+                            <input type="checkbox" name="check" value=""class="mb-3 p-5">
+                            <p class="de">Save card as per new RBI guidelines.<a href="">Learn More</a></p>
+                          </div>
+                  
+                      <%}%>
+                    </div> 
+                <h3 style="color :rgb(26, 13, 6); font-weight :bold;font-size :25px;">Another payment method</h3>
+                <hr color="black">
+                <div>
+                    <input type="radio" name="pay">
+                    <label for="pay" style="font-weight :bold; font-size :20px;">Credit or Debit Card</label>
+                </div>
+                <div class="d-flex flex-row">
+                    <img src="https://1000logos.net/wp-content/uploads/2021/11/VISA-logo.png" class="i09 m-2" style=" height :40px;"/>
+                    <img src="https://companieslogo.com/img/orig/BAJFINANCE.NS-1c922000.png?t=1593960949" class="i09 m-2" style=" height :40px;"/>
+                    <img src="https://cdn3.iconfinder.com/data/icons/payment-method-1/64/_Maestro-512.png" class="i09 m-2" style=" height :40px;"/>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Rupay-Logo.png/1200px-Rupay-Logo.png" class="i09 m-2" style=" height :40px;"/>
+                    <img src="https://p1.hiclipart.com/preview/110/429/95/visa-mastercard-logo-credit-card-payment-card-number-atm-card-automated-teller-machine-mousepad-computer-accessory-circle-png-clipart.jpg" class="i09 m-2" style=" height :40px;"/>
+                    <img src="https://seeklogo.com/images/D/Diners_Club-logo-9EA513928F-seeklogo.com.png" class="i09 m-2" style=" height :40px;"/>
+                   
+                </div>
+                <img src="https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-vector-add-icon-png-image_925895.jpg" class="i09 m-2" style=" height :40px;"/>
+                <img src="https://www.visa.co.in/dam/VCOM/regional/ap/india/global-elements/images/in-visa-platinum-card-498x280.png" class="i09 m-2" style=" height :40px;"/>
+                <a href="" data-toggle="modal" style="font-size :25px; color :green ;font-weight :bold;" data-target="#exampleModal">Enter card details ></a>
+                <hr color="black">
+                <div>
+                    <input type="radio" name="net">
+                    <label for="pay" style="font-weight :bold; font-size :20px;">Net Banking</label>
+                 </div>
+                 <div>
+                    <select name="net banking" class="shadow m-2 btn-light1">
+                                      <option value="choose">Choose an option</option>
+                                      <option value="Airtel Payments Bank">Airtel Payments Bank</option>
+                                        <option value="Allahabad">Allahabad</option>
+                                        <option value="Andhra Bank">Andhra Bank</option>
+                                        <option value="Axis Bank">Axis Bank</option>
+                                        <option value="Bank of India">Bank of India</option>
+                                        <option value="Bank of  Maharashtra">Bank of  Maharashtra</option>
+                                        <option value="Canara Bank">Canara Bank</option>
+                                        <option value="Central Bank of India">Central Bank of India</option>
+                                        <option value="City Union Bank">City Union Bank</option>
+                                        <option value="Corporation Bank">Corporation Bank</option>
+                                        <option value="DCB Bank Ltd">DCB Bank Ltd</option>
+                                        <option value="Federal Bank">Federal Bank</option>
+                                        <option value="HDFC Bank">HDFC Bank</option>
+                                        <option value="ICICI Bank">ICICI Bank</option>
+                                        <option value="IDBI Bank">IDBI Bank</option>
+                                        <option value="Indian Bank">Indian Bank</option>
+                                        <option value="Indian Overseas Bank">Indian Overseas Bank</option>
+                                        <option value="Jammu and Kashmir Bank">Jammu and Kashmir Bank</option>
+                                        <option value="Karnataka Bank">Karnataka Bank</option>
+                                        <option value="Kotak Bank">Kotak Bank</option>
+                                        <option value="Laxmi Vilas Bank">Laxmi Vilas Bank</option>
+                                        <option value="Oriental Bank of Commerce">Oriental Bank of Commerce</option>
+                                        <option value="Punjab National Bank">Punjab National Bank</option>
+                                        <option value="South Indian Bank">South Indian Bank</option>
+                                        <option value="State Bank of India">State Bank of India</option>
+                                        <option value="Union Bank of India">Union Bank of India</option>
+                                        <option value="Yes Bank Ltd">Yes Bank Ltd</option>
+                    </select>
+                    <form action="/verify" method="post">
+                      <button type="submit" name="ver" value="ver2">Verify</button>
+                    </form>
+                 </div>
+                 <hr color="black">
+                 <div>
+                    <input type="radio" name="UPI">
+                    <label for="upi" style="font-weight :bold; font-size :20px;">Other UPI APPS</label>
+                    <p class="de">Please enter your UPI ID</p>
+                    <input type="text"  class="shadow m-2 btn-light1"  id="Enter UPI ID">
+                    <form action="/verify" method="post">
+                      <button type="submit" name="ver" value="ver3">Verify</button>
+                    </form>
+                 </div>
+                 <hr color="black">
+                 <div>
+                    <input type="radio" disabled>
+                    <label for="" style="font-weight :bold; font-size :20px;">EMI Unavailable</label>
+                 </div>
+                 <hr color="black">
+                 <form action="/confirm" method="get">
+                  <button type="submit" class="btn btn-warning b2 button mb-3" style="width :280px; font-size :15px;">Use this Payment Method</button>
+                  </form>
+                 
+            </div>
+            <hr color="black">
+            <div class="d-flex flex-row">
+                <h3 style="color :rgb(26, 13, 6); font-weight :bold;font-size :25px;">3 Offers</h3>
+                <a href="" class="plo1" style="font-size :25px; color :green ;font-weight :bold;">Change</a>
+            </div>
+            <hr color="black">
+            <h3 style="color :rgb(26, 13, 6); font-weight :bold;font-size :25px;">4 Items & Delivery</h3>
+            <hr color="black">
+            <p class="de">Need help? Check our help pages or <a href="https://mail.google.com/mail/u/0/" target="_blank">contact us</a></p>
+            <p class="de">When your order is placed, we'll send you an e-mail message acknowledging receipt of your order. If you choose to pay using an electronic payment method (credit card, debit card or net banking), you will be directed to your bank's website to complete your payment. Your contract to purchase an item will not be complete until we receive your electronic payment and dispatch your item. If you choose to pay using Pay on Delivery (POD), you can pay using cash/card/net banking when you receive your item.</p>
+            <p class="de">See CraftHeaven.in's <a href="">Return policy</a></p>
+            <p class="de">Need to add more items to your order? Continue shopping on the  <a href="/craftmen">CraftHeaven.in Homepage</a></p>
+        </div>
+      
+        <div class="card-container1 oye1 rip1 p-2">
+            <div class="d-flex flex-row justify-content-center text-center">
+              <form action="/confirm" method="get">
+                <button type="submit" class="btn btn-warning b2 button mb-3" style="width :280px;font-size :15px;">Use this Payment Method</button>
+                </form>
+            
+            </div>
+              <p class="de text-center">Choose a payment method to continue checking out. You will still have a chance to review and edit your order before it is final.</p>
+              <hr color="black">
+            <h3 style="font-weight :bold;">Order Summary</h3>
+            <p style="font-size :15px;">Items:</p>
+            <p style="font-size :15px;">Delivery:</p>
+            <p style="font-size :15px;">Total:</p>
+            <p style="font-size :15px;">Promotion Applied:	</p>
+            <hr color="black">
+            <h3 style="color :rgb(188, 77, 22); font-weight :bold;">Order Total:</h3>
+            <div style="background-color: aliceblue;">
+              <hr color="black">
+              <a href="" class="mb-5">How are delivery costs calculated?</a>
+              </div>
+         </div>
+     
+</div>        
+
+
+
+<!-- Types of cards photos-->
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog d-flex flex-row justify-content-center">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center text-dark" id="exampleModalLabel">Enter card details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="w text-dark">
+            <form action="/checkout" method="post">
+            
+            
+                <div class="d-flex flex-row">
+                    <label for="bank" class="h1 text-dark">Select Bank nmae</label>
+                    <select name="bank" class="h3">
+                        <option value=""></option>
+                        <option value="Airtel Payments Bank">Airtel Payments Bank</option>
+                        <option value="Allahabad">Allahabad</option>
+                        <option value="Andhra Bank">Andhra Bank</option>
+                        <option value="Axis Bank">Axis Bank</option>
+                        <option value="Bank of India">Bank of India</option>
+                        <option value="Bank of  Maharashtra">Bank of  Maharashtra</option>
+                        <option value="Canara Bank">Canara Bank</option>
+                        <option value="Central Bank of India">Central Bank of India</option>
+                        <option value="City Union Bank">City Union Bank</option>
+                        <option value="Corporation Bank">Corporation Bank</option>
+                        <option value="DCB Bank Ltd">DCB Bank Ltd</option>
+                        <option value="Federal Bank">Federal Bank</option>
+                        <option value="HDFC Bank">HDFC Bank</option>
+                        <option value="ICICI Bank">ICICI Bank</option>
+                        <option value="IDBI Bank">IDBI Bank</option>
+                        <option value="Indian Bank">Indian Bank</option>
+                        <option value="Indian Overseas Bank">Indian Overseas Bank</option>
+                        <option value="Jammu and Kashmir Bank">Jammu and Kashmir Bank</option>
+                        <option value="Karnataka Bank">Karnataka Bank</option>
+                        <option value="Kotak Bank">Kotak Bank</option>
+                        <option value="Laxmi Vilas Bank">Laxmi Vilas Bank</option>
+                        <option value="Oriental Bank of Commerce">Oriental Bank of Commerce</option>
+                        <option value="Punjab National Bank">Punjab National Bank</option>
+                        <option value="South Indian Bank">South Indian Bank</option>
+                        <option value="State Bank of India">State Bank of India</option>
+                        <option value="Union Bank of India">Union Bank of India</option>
+                        <option value="Yes Bank Ltd">Yes Bank Ltd</option>
+                    </select>
+                </div>
+
+                <div class="d-flex flex-row">
+                    <label for="type" class="h1 text-dark">Card Type</label>
+                    <select name="type" class="h3">
+                        <option value=""></option>
+                        <option value="visa">Visa</option>
+                        <option value="rupay">Rupay</option>
+                        <option value="master">Master Card</option>
+                        <option value="discover">Discover</option>
+                        <option value="Visa Platinum">Visa Platinum</option>
+                        <option value="Rupay Platinum">Rupay Platinum</option>
+                        <option value="Maestro">Maestro</option>
+                    </select>
+                </div>
+            <div class="d-flex flex-row">
+            <label for="name" class="h1 text-dark">Card Number</label>
+            <input type="text" name="name" class="h3 pl-5" required>
+            </div>
+            <div class="d-flex flex-row">
+            <label for="intro" class="h1 text-dark">Nickname</label>
+            <input type="text" name="nick" class="h3" required>
+            </div>
+            <div class="d-flex flex-row">
+            <label for="contact" class="h1 text-dark">Expiry date</label>
+            <input type="text" name="contact" class="h3" required>
+            </div>
+
+            <button type="submit" class="button b2 btn btn-warning ml-4 mt-3" style="font-size :15px;">Enter card details</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <%=delivery.name %>
+  <%=delivery.mobile%>
+  <div>
+    <%if(locals.sub){%>
+   
+  <%}%>
+  </div>
+
+
+  <div class="d-flex flex-row justify-content-center fish">
+    <form action="/buy" method="get">
+      <button class="button b2 btn btn-danger">Back to Previous</button>
+    </form>
+    <form action="/craftmen" method="get">
+    <button class="button b2 btn btn-danger ml-3">Back to Home</button>
+  </form>
+  </div>
+
+<%- include('partials/footer') %>

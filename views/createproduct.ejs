@@ -1,0 +1,60 @@
+<%- include('partials/header')%>
+<div class="q">
+
+<div class="d-flex flex-row justify-content-left">
+    <div class="card-container" style="background-color :transparent;">
+    
+            <div class="w pt-5">
+        <form action="/createproduct" method="post">
+        <div class="d-flex flex-row">
+        <label for="title" class="h1 text-white">Title: </label>
+        <input type="text" name="title" placeholder="Enter Title" class="h3 pl-5" style="margin-left :80px;"> 
+        </div>
+        <div class="d-flex flex-row">
+        <label for="des" class="h1 text-white">Description: </label>
+        <input type="text" name="des" placeholder="Enter Description" class="h3 pl-5"  style="margin-left :20px;">
+    </div>
+    <div class="d-flex flex-row">
+        <label for="price" class="h1 text-white">Price: </label>
+        <input type="text" name="price" placeholder="Enter Price" class="h3 pl-5"  style="margin-left :80px;">
+    </div>
+    <div class="d-flex flex-row">
+        <label for="avail" class="h1 text-white">Availiability: </label>
+        <input type="text" name="avail" placeholder="Enter true or false" class="h3 pl-5">
+    </div>
+    <div class="d-flex flex-row">
+        <label for="img" class="h1 text-white">Image: </label>
+        <input type="text" name="image" placeholder="Enter image link address" class="h3 pl-5"  style="margin-left :80px;">
+    </div>
+    <div class="d-flex flex-row">
+        <label for="img" class="h1 text-white">Image1: </label>
+        <input type="text" name="image1" placeholder="Enter image link address" class="h3 pl-5"  style="margin-left :80px;">
+    </div>
+    <div class="d-flex flex-row">
+        <label for="img" class="h1 text-white">Image2: </label>
+        <input type="text" name="image2" placeholder="Enter image link address" class="h3 pl-5"  style="margin-left :80px;">
+    </div>
+    <div class="d-flex flex-row">
+        <label for="img" class="h1 text-white">Image3: </label>
+        <input type="text" name="image3" placeholder="Enter image link address" class="h3 pl-5"  style="margin-left :80px;">
+    </div>
+    <div class="d-flex flex-row">
+      
+        <label for="category" class="h1 text-white">Category: </label>
+        <input type="text" name="category" placeholder="Enter Category" class="h3 pl-5"  style="margin-left :60px;">
+        </div>
+        <form action="/craftmen" method="get">
+            <div class="d-flex flex-row justify-content">
+            <button type="submit" name="blue" value="kjb" class="button b2 btn btn-warning ml-4 mt-3">Submit</button>
+            </div>
+        </form>
+    </form>
+    </div>
+    
+    </div>
+    <img src="https://www.edesk.com/wp-content/uploads/2021/03/find-trending-products-sell-ecommerce.png" class="i8"/>
+    </div>
+</div>
+
+</div>
+<%- include('partials/footer') %>

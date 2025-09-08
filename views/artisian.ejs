@@ -1,0 +1,250 @@
+<%- include('partials/header')%>
+<div class="afnan3 text-dark pb-5">
+  <nav class="navbar navbar-expand-lg a fish1 w-100">
+
+    <a class="navbar-brand" href="#"><img src="https://e7.pngegg.com/pngimages/129/130/png-clipart-shopping-cart-computer-icons-online-shopping-online-shop-angle-text-thumbnail.png" class="i"/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <h1 class="pl-2">CraftHeaven</h1>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container pt-3">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 c" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-light ml-2" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button">Wooden</button>
+        <button class="dropdown-item" type="button">Leather</button>
+        <button class="dropdown-item" type="button">Jewellery</button>
+        <button class="dropdown-item" type="button">Paintings</button>
+        <button class="dropdown-item" type="button">Notifications</button>
+        <button class="dropdown-item" type="button">Profile</button>
+        <%if(locals.reg){%>
+        <form action="/logout" method="get">
+          <button type="submit" name="logout" value=""  class="dropdown-item">Logout</button>
+        </form>
+        <%}%>
+       
+      </div>
+    </div>
+    <div class="d-flex flex-row mt-4">
+     
+    <form action="/cart" method="get">
+      <button type="submit" name="cart" class="btn btn-warning ml-3" style="width :100px; ">View Cart</button>
+    </form>
+    <form action="/sign" method="post">
+      <%if(locals.reg){%>
+        <h2  style="margin-left :30px;">Hello,<%=reg%></h2>
+      
+        <%}else{%>
+          <button type="submit" class="btn btn-warning" style="margin-left :20px;">Sign Up</button>
+        <%}%>
+      </form>
+    </div>
+  </nav>
+<div>
+  <%if (locals.profile){%>
+  <h1 class="heading text-center h8">Artisan Profile</h1>
+  <div class="d-flex flex-row">
+    <img src="<%=profile.profilepicture%>" class="i3" style="height :300px; width :700px;" alt="">
+    <div class="d-flex flex-column p-4">
+      <div class="d-flex flex-row">
+        <h3 style="font-size :25px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;">Name : </h3>
+        <span style="font-size :20px;  padding :4px;"><%=profile.name%></span><br>
+      </div>
+      <div class="d-flex flex-row">
+        <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Email : </h3>
+        <span style="font-size :20px; ;  padding :4px;"><%=profile.contactinfo%></span><br>
+       </div>
+       <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Ph Number : <span style="font-size :20px; font-weight :normal;">917013596447</span></h3>
+       <div class="d-flex flex-row">
+        <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Bio: </h3>
+        <span style="font-size :20px;   padding :4px;"><%=profile.bio%></span>
+       </div>
+      </div>
+      </div>
+      <div class="d-flex flex-row">
+      <h2 class="p-3">Keep your profile fresh and up-to-date by adding or editing your information : </h2>
+      <!-- <form action="/updateprofile" method="post">-->
+       <button type="button" name="update1" value="up" class="button b2 btn btn-warning" data-toggle="modal" data-target="#exampleModal">Update</button>
+       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog d-flex flex-row justify-content-center">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center text-dark" id="exampleModalLabel">Artisan Profile</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="w text-dark">
+                <form action="/profile" method="post">
+                  <div class="d-flex flex-row">
+                <label for="name" class="h1 text-dark">Name</label>
+                <input type="text" name="name" class="h3 pl-5" required>
+                </div>
+                <div class="d-flex flex-row">
+                <label for="intro" class="h1 text-dark">Description</label>
+                <input type="text" name="intro" class="h3" required>
+                </div>
+                <div class="d-flex flex-row">
+                <label for="contact" class="h1 text-dark">contact</label>
+                <input type="email" name="contact" class="h3" required>
+                </div>
+                <div class="d-flex flex-row">
+                <label for="img" class="h1 text-dark">img</label>
+                <input type="text" name="img" class="h3">
+                 </div>
+                <form action="/craftmen" method="get">
+                <button type="submit" class="button b2 btn btn-warning ml-4 mt-3">Submit</button>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <%}else{%>
+   
+    <button type="button" class="button b1 btn btn-primary b3" data-toggle="modal" data-target="#exampleModal">
+      Add Profile
+    </button>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog d-flex flex-row justify-content-center">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center text-dark" id="exampleModalLabel">Artisan Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="w text-dark">
+              <form action="/profile" method="post">
+                <div class="d-flex flex-row">
+              <label for="name" class="h1 text-dark">Name</label>
+              <input type="text" name="name" class="h3 pl-5" required>
+              </div>
+              <div class="d-flex flex-row">
+              <label for="intro" class="h1 text-dark">Description</label>
+              <input type="text" name="intro" class="h3" required>
+              </div>
+              <div class="d-flex flex-row">
+              <label for="contact" class="h1 text-dark">contact</label>
+              <input type="email" name="contact" class="h3" required>
+              </div>
+              <div class="d-flex flex-row">
+              <label for="img" class="h1 text-dark">img</label>
+              <input type="text" name="img" class="h3">
+               </div>
+              <form action="/craftmen" method="get">
+              <button type="submit" class="button b2 btn btn-warning ml-4 mt-3">Submit</button>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <%}%>
+</form>
+
+
+<form action="/createproduct" method="get">
+  <div class="d-flex flex-row">
+    <h2 class="p-3">Introduce a new product to your collection and watch your business grow : </h2>
+    <button type="submit" class="btn btn-dark button b2 mt-3">Add Product</button>
+    </div>
+ </form>
+<hr color="black">
+ <div class="afnan3">
+
+ <%if(locals.getproducts){%>
+  <h1 class="heading text-center h8">Artisan Products</h1>
+  <div class="d-flex flex-row justify-content-center">
+    <% getproducts.forEach((product) =>{%>
+      <div class=" d-flex flex-column">
+            <div class="card-container m d-flex flex-column text-dark">
+              <img src="<%=product.images%>" class="i5"/>
+              <div class="d-flex flex-row">
+                <h3 style="font-size :25px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;">Name:</h3>
+                <span style="font-size :20px;  padding :4px;"><%=product.title%></span><br>
+              </div>
+              
+               <div class="d-flex flex-row">
+                <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Price : </h3>
+                <span style="font-size :20px; ;  padding :4px;"><%=product.price%></span><br>
+               </div>
+               <div class="d-flex flex-row">
+                <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Product Availiability : </h3>
+                <span style="font-size :20px; ;  padding :4px;"><%=product.availability%></span><br>
+               </div>
+               <div class="d-flex flex-row">
+                <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Category : </h3>
+                <span style="font-size :20px; ;  padding :4px;"><%=product.category%></span><br>
+               </div>
+               <form action="/productpage" method="post">
+                <button name="green" value="<%=product.productid%>" class="user-link btn btn-success">View more</button>
+              </form> 
+            </div>
+        
+
+ <div class="d-flex flex-row">
+      <form action="/update" method="post">
+        <button type="submit" class="btn btn-warning btn-large button b2 mt-3" style="width :170px; margin-left :100px; border-color: black;" name="dark" value="<%=product.productid%>">Update</button> 
+      </form>
+      <form action="/delete" method="post">
+      <button type="submit" class="btn btn-dark
+        button b2 mt-3" name="delete" style="width :170px; margin-left:10px;  border-color: black;" value="<%=product.productid%>">Delete</button>
+    </form>
+    </div>
+    </div>
+    <%})%>
+  </div>
+  <%}%>
+  
+
+</div>
+<hr color="black">
+<div class="card-container" style="width :1300px; height :auto;  background-color: #E2C3A2;">
+
+ 
+   <div class="p-3">
+       <h1 class="text-center heading h8">Customer Reviews</h1>
+       <p class="de"><span style="font-weight :bold ;font-size:30px;">Sarah B</span>: I recently purchased an item that I'm absolutely thrilled with! It's become a staple in my daily life and has exceeded my initial expectations. The quality and functionality are fantastic, and I wouldn't hesitate to recommend it to others.</p>
+       <p class="de"><span style="font-weight :bold ;font-size:30px;">David A</span>: This recent purchase has some great features and functionalities that I appreciate. However, the initial setup process was a bit more complex than anticipated, and a couple of features could be more user-friendly. Overall, it's a decent product, but there's definitely room for improvement.</p>
+       <p class="de"><span style="font-weight :bold ;font-size:30px;">Maria L</span>: I recently got something that's been a great motivator for me. It helps me stay on track with my goals and provides valuable insights into my progress. The accompanying app is easy to use and navigate, which is a big plus. However, the battery life could be a bit longer for optimal convenience.</p>
+     </div>
+</div>
+<hr color="black">
+<h1 class="heading h8">Awards Earned by Artisan</h1>
+<div class="d-flex flex-row justify-content-center">
+  <img src="https://manjilas.com/wp-content/uploads/2022/06/290580383_5403814513010320_2478619272923408494_n.jpg" class="i5 i9"/>
+  <img src="https://sslwireless.com/wp-content/uploads/2020/11/Master-Card-ward-2020-v2-Website-newsfeed.jpg" class="i5 i9"/>
+  <img src="https://www.internetcommercesummit.com/storage/2023/11/800x800-ICS-Awards-Logo-1.png" class="i5 i9"/>
+  <img src="https://www.ione360.com/wp-content/uploads/sites/4/2021/06/1623061440304.jpeg" class="i5 i9"/>
+</div>
+<div class="d-flex flex-row justify-content-center">
+  <form action="/craftmen">
+  <button class="button btn btn-danger">Back to Home</button>
+</form>
+</div>
+</div>
+
+<%- include('partials/footer') %>

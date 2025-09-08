@@ -1,0 +1,73 @@
+<%- include('partials/header')%>
+<%products.forEach((product) =>{%>
+<div class="card-container1 oye p-5 rip1 rip9 pl-5">
+    <h1>Your Orders</h1>
+    <hr color="black">
+    <h5>orders placed in 4 Days</h5>
+    <div class="quel p-4  pl-5 pr-5 mt-5">
+        <div class="d-flex flex-row">
+     
+        <div class="d-flex flex-column">
+            <p class="de">Order Placed</p>
+            <h5>5/3/24</h5>
+        </div>
+
+        <div class="d-flex flex-column pl-5">
+           
+            <p class="de">Total</p>
+            <h5><%=product.price%></h5>
+        </div>
+        <div class="d-flex flex-column sw">
+            <p class="de">ORDER # 406-1983874-6797144</p>
+            <h5><a href="">View Order Details</a><a href="" class="pl-3">Invoice</a></h5>
+        </div>
+    
+        </div>
+        <hr color="black">
+        <h2 style="color :green">Succesfull</h2>
+        <h5>Paid on:5/3/24</h5>
+        <div class="d-flex flex-row">
+          
+            <img src="<%=product.images%>" class="i5" alt="">
+            <div class="d-flex flex-column p-5">
+                <div class="d-flex flex-row">
+                    <h3 style="font-size :20px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;">Title:</h3>
+                    <span style="font-size :20px;  padding :4px;">   <%=product.title%></span><br>
+                  </div>
+                  
+                   <div class="d-flex flex-row">
+                    <h3 style="font-size :20px; font-weight :bold; padding-top :4px;">Price : </h3>
+                    <span style="font-size :20px; ;  padding :4px;">   <%=product.price%></span><br>
+                   </div>
+                   <div class="d-flex flex-row">
+                    <h3 style="font-size :20px; font-weight :bold; padding-top :4px;">Product Availiability : </h3>
+                    <span style="font-size :20px; ;  padding :4px;"><%=product.availability%></span><br>
+                   </div>
+                   <div class="d-flex flex-row">
+                    <h3 style="font-size :20px; font-weight :bold; padding-top :4px;">Category : </h3>
+                    <span style="font-size :20px; ;  padding :4px;"><%=product.category%></span><br>
+                   </div>
+                   <div>
+                   <form action="/productorder" method="post">
+                    <button type="submit" name="product" value="<%=product.productid%>" class="btn btn-success">View more</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+        <hr color="black">
+         <button class="btn btn-dark button b2">Archive Order</button>
+          
+    
+       
+        
+              
+               
+           
+        </div>
+        <%})%>
+   
+
+</div>
+
+
+<%- include('partials/footer') %>

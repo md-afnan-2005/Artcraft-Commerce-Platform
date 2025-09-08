@@ -1,0 +1,341 @@
+<div class="card-container1">
+  <%- include('partials/header')%>
+  <nav class="navbar navbar-expand-lg a fish1 w-100">
+
+    <a class="navbar-brand" href="#"><img src="https://e7.pngegg.com/pngimages/129/130/png-clipart-shopping-cart-computer-icons-online-shopping-online-shop-angle-text-thumbnail.png" class="i"/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <h1 class="pl-2">CraftHeaven</h1>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container pt-3">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 c" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-light ml-2" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button">Wooden</button>
+        <button class="dropdown-item" type="button">Leather</button>
+        <button class="dropdown-item" type="button">Jewellery</button>
+        <button class="dropdown-item" type="button">Paintings</button>
+        <button class="dropdown-item" type="button">Notifications</button>
+        <button class="dropdown-item" type="button">Profile</button>
+        <%if(locals.reg){%>
+        <form action="/logout" method="get">
+          <button type="submit" name="logout" value=""  class="dropdown-item">Logout</button>
+        </form>
+        <%}%>
+       
+      </div>
+    </div>
+    <div class="d-flex flex-row mt-4">
+     
+    <form action="/cart" method="get">
+      <button type="submit" name="cart" class="btn btn-warning ml-3" style="width :100px; ">View Cart</button>
+    </form>
+    <form action="/sign" method="post">
+      <%if(locals.reg){%>
+        <h2  style="margin-left :30px;">Hello,<%=reg%></h2>
+      
+        <%}else{%>
+          <button type="submit" class="btn btn-warning" style="margin-left :20px;">Sign Up</button>
+        <%}%>
+      </form>
+    </div>
+  </nav>
+  <div>
+  <h1 class="text-center heading h8">Product Information</h1>
+  <div class="d-flex flex-row">
+      <div id="carouselExampleIndicators" class="carousel slide x" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="<%=products.image1%>" class="d-block i0" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="<%=products.image2%>" class="d-block i0" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="<%=products.image3%>" class="d-block i0" alt="...">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+      </div>
+      <div class="w-50 pt-5 d-flex flex-column">
+        
+         <div class="d-flex flex-row">
+          <h3 style="font-size :30px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;" class="h8">Title</h3>
+          <h3 style="font-size :25px;  padding :4px; padding-top:7px;"> : <%=products.title%></h3><br>
+        
+          <a href="https://www.whatsapp.com/" target="_blank">
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+              <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
+            </svg>
+  
+          </a> 
+   
+        </div>
+        <div class="d-flex flex-row">
+          <h3 style="font-size :30px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;" class="h8">Availability</h3>
+          <h3 style="font-size :25px;  padding :4px; padding-top:7px;"> : <%=products.availability%></h3><br>
+        </div>
+        <div class="d-flex flex-row">
+          <h3 style="font-size :30px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;" class="h8">Price</h3>
+          <h3 style="font-size :25px;  padding :4px; padding-top:7px;"> : <%=products.price%></h3><br>
+        </div>
+        <div class="d-flex flex-row">
+          <h3 style="font-size :30px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;" class="h8">Category</h3>
+          <h3 style="font-size :25px;  padding :4px; padding-top:7px;"> : <%=products.category%></h3><br>
+        </div>
+        <div class="d-flex flex-column">
+          <h3 style="font-size :30px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;" class="h8">Description</h3>
+          <h3 style="font-size :25px;  padding :4px; padding-top:7px;"><%=products.description%></h3><br>
+        </div>
+        <form action="/productartisan" method="post">
+          <button class="button btn btn-danger b2 mn" type="submit" name="artisian" value="<%=artdetails.artisanid%>">View Artisan Profile</button>
+        </form>
+  
+         
+      
+         
+         
+      </div>   
+  </div>
+  <div class="pl-5">
+  <div class="d-flex flex-row">
+      <h3 style="font-size :30px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;" class="h8">Artisan Name</h3>
+      <h3 style="font-size :25px;  padding :4px; padding-top:7px;"> : <%=artdetails.name%></h3>
+      
+    </div>
+    <div class="d-flex flex-column">
+      <h3 style="font-size :30px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;" class="h8">Artisan Bio</h3>
+      <h3 style="font-size :25px;  padding :4px; padding-top:7px;"><%=artdetails.bio%></h3>
+    </div>
+    <div class="d-flex flex-row">
+      <h3 style="font-size :30px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;" class="h8">Artisan Details</h3>
+      <h3 style="font-size :25px;  padding :4px; padding-top:7px;"> :  <%=artdetails.contactinfo%></h3>
+    </div>
+  </div>
+  <hr color="black">
+  <div class="d-flex flex-row justify-content-center">
+  <h1 class="text-center heading h8 pr-5">Return Policy</h1>
+  <h1 class="text-center heading h8 pl-5">Shipping Details</h1>
+  </div>
+  <div class="d-flex flex-row justify-content-center">
+  <div class="card-container1 oye1 oye2 p-3">
+    <h3 class="de" style="font-weight :bold;font-size :20px;">Offers</h3>
+    <div class="d-flex flex-row">
+      <div class="card-container1 oye3">
+        <h3 class="de" style="font-weight :bold;font-size :20px;">No Cost EMI</h3>
+        <p class="de">Upto ₹1,618.63 EMI interest savings on select Credit Cards, select Debit Cards,...</p>
+        <a href="">3 Offers ></a>
+      </div>
+      <div class="card-container1 oye3">
+        <h3 class="de" style="font-weight :bold;font-size :20px;">Bank Offers</h3>
+        <p class="de">Upto ₹2,000.00 discount on select Credit Cards, HDFC…</p>
+        <a href="">26 Offers ></a>
+      </div>
+      <div class="card-container1 oye3">
+        <h3 class="de" style="font-weight :bold;font-size :20px;">Partner Offers</h3>
+        <p class="de">Get GST invoice and save up to 28% on business purchases.</p>
+        <a href="">1 Offers ></a>
+      </div>
+  
+    </div>
+    <hr color="black">
+  <div class="d-flex flex-column justify-content-center">
+    <div class="d-flex flex-row">
+      <div class="d-flex flex-column mr-5 ml-3  text-center">
+        <img src="https://www.nicepng.com/png/detail/527-5274855_replace-icon-change-icon.png" class="i09" style="height :100px;"/>
+        <a class="de" style="font-size :15px;" href="">7 DAYS REPLACEMENT</a>
+      </div>
+      <div class="d-flex flex-column mr-5 ml-3  text-center">
+        <img src="https://www.shutterstock.com/image-vector/man-riding-scooter-delivery-icon-600nw-625212923.jpg" class="i09" style="height :100px;"/>
+        <a class="de" style="font-size :15px;" href="">FREE DELIVERY</a>
+      </div>
+      <div class="d-flex flex-column mr-5 ml-3  text-center">
+        <img src="https://www.creativefabrica.com/wp-content/uploads/2022/01/12/warranty-logo-transparent-backgrounD-Graphics-23346887-1.jpg" class="i09" style="height :100px;"/>
+        <a class="de" style="font-size :15px;" href="">1 YEAR WARRANTY</a>
+      </div>
+    </div>
+    <div class="d-flex flex-row">
+      <div class="d-flex flex-column mr-5 ml-3  text-center">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/008/013/016/small/payment-by-cash-for-express-delivery-flat-illustration-how-people-deliver-package-and-pay-for-the-delivery-by-cash-human-hand-holds-money-and-pay-for-the-package-courier-get-payment-for-it-vector.jpg" class="i09" style="height :100px;"/>
+        <a class="de" style="font-size :15px;" href="">PAY ON DELIVERY</a>
+      </div>
+      <div class="d-flex flex-column mr-5 ml-3  text-center">
+        <img src="https://media.istockphoto.com/id/655254230/vector/trophy-cup-icon.jpg?s=612x612&w=0&k=20&c=ScSSWWysiBHe85N0deb42VG_y5it-GTBDfMP36UiuBI=" class="i09" style="height :100px;"/>
+        <a class="de" style="font-size :15px;" href="">TOP BRAND</a>
+      </div>
+      <div class="d-flex flex-column mr-5 ml-3 text-center">
+        <img src="https://previews.123rf.com/images/mamanamsai/mamanamsai1509/mamanamsai150900530/46420145-repair-icon-on-yellow-button-background-clean-vector.jpg" class="i09" style="height :100px;"/>
+        <a class="de" style="font-size :15px;" href="">PAID INSTALLATION AVAILABLE</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="card-container1 oye1 oye2 p-3">
+    <div class="d-flex flex-row">
+    <h3 class="de" style="font-weight :bold;font-size :20px;">With Exchange</h3>
+    <img src="https://www.iconbolt.com/preview/twitter/eva-fill/radio-button-off.svg" class="i09 xz" style="width :180px; padding-left :7px;"/>
+    </div>
+    <hr color="black">
+  <div class="d-flex flex-row">
+    <h3 class="de" style="font-weight :bold;font-size :20px;">Without Exchange</h3>
+    <img src="https://www.pngkey.com/png/detail/113-1133625_checked-png-icon-free-download-comments-icon-dot.png" class="i09 xz" style="width :70px; padding-right :7px;"/>
+  
+  </div>
+  
+  <div class="d-flex flex-row">
+  <p class="de" style="color :rgb(174, 12, 12); font-weight :bold;font-size :20px;">28,990.00</p>
+  <img src="data:image/png;base64,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" class="i09"/>
+  </div>
+  <p class="de">FREE scheduled delivery as soon</p>
+  <p class="de">as <span style="font-weight :bold;font-size :20px;">Sunday, 3 March, 7 AM - 9 PM.</span> Order within 3 hrs 59 mins. <a href="">Details</a></p>
+  <div class="d-flex flex-row">
+    <img src="https://png.pngtree.com/png-vector/20191021/ourmid/pngtree-vector-location-icon-png-image_1834331.jpg" class="i09"/>
+    <a href="">DELIVERED TO GUNTUR UPDATED LOCATION.</a>
+  </div>
+  <h3 class="de" style="color :green; padding-top :4px;">IN STOCK</h3>
+  <div class="d-flex flex-row">
+    <h2 class="de">Ships From  :  </h2>
+    <h2 class="de pl-3">  CraftHeaven</h2>
+  </div>
+  <div class="d-flex flex-row pb-3">
+    <h2 class="de pt-3">Sold By  :  </h2>
+    <a class="de pl-3 pt-3" href="">DAWNTECH ELECTRONICS PRIVATE LIMITED</a>
+  </div>
+  <div>
+    <form action="/cart" method="post">
+    <label for="quantity">Quantity</label>
+    <select name="quantity">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+    </select>
+  </div>
+  <div class="d-flex flex-row">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Y1gzEvI3BHAohpHVyWyEmc1_drEa26hUrgdhVJbFJKUL9Ig06gWUwa7X9RFkC3zIDMc&usqp=CAU" class="i09"/>
+  <p class="de" style="color :green; padding-top :4px;">Secure Transaction</p>
+  </div>
+  <div class="d-flex flex-row">
+    <input type="checkbox" name="check" value=""class="mb-3 p-4">
+    <p class="de">Add Gift Options</p>
+  </div>
+  </div>
+  
+  </div>
+  <hr color="black">
+  <h1 class="text-center heading h8">Reviews & Rating</h1>
+  <div class="card-container sun1" style="width :1300px; height :auto;">
+         <div class="d-flex flex-row">
+        
+          <div class="p-3">
+              <h1 class="text-center heading h8">Customer Reviews</h1>
+              <p class="de"><span style="font-weight :bold ;font-size:30px;">Sarah B</span>: I recently purchased an item that I'm absolutely thrilled with! It's become a staple in my daily life and has exceeded my initial expectations. The quality and functionality are fantastic, and I wouldn't hesitate to recommend it to others.</p>
+              <p class="de"><span style="font-weight :bold ;font-size:30px;">David A</span>: This recent purchase has some great features and functionalities that I appreciate. However, the initial setup process was a bit more complex than anticipated, and a couple of features could be more user-friendly. Overall, it's a decent product, but there's definitely room for improvement.</p>
+              <p class="de"><span style="font-weight :bold ;font-size:30px;">Maria L</span>: I recently got something that's been a great motivator for me. It helps me stay on track with my goals and provides valuable insights into my progress. The accompanying app is easy to use and navigate, which is a big plus. However, the battery life could be a bit longer for optimal convenience.</p>
+            </div>
+         
+        
+                
+          <div class="card-container" style="margin-right :50px;width :40%; height :400px; margin-bottom :10px;">
+            <h3 class="heading text-left" style="font-weight: bold;">Rate this Product</h3>
+            <div class="star-rating d-flex flex-row justify-content-start">
+              <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+              <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+              <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+              <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+              <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+            </div>
+          <div class="d-flex flex-row">
+            <h3 style="padding-left :15px;">High</h3>
+            <h3 style="padding-left :300px;">Low</h3>
+          </div>
+         
+            </div>
+            
+  
+         </div>
+      </div>
+      <div class="d-flex flex-row justify-content-center fish mt-3">
+  
+        <button class="btn btn-primary button" name="cart" value="<%=products.productid%>">Add to Cart</button>
+        </form>
+        
+        <form action="/buy" method="post">
+    
+          <button name="buy2" value="<%=products.productid%>" class="btn btn-dark button ml-3">Buy now</button>
+      </form>
+        </div>
+     
+  
+ 
+  <hr color="black">
+  <h1 class="text-center heading h8">Similar Products</h1>
+  <div class="d-flex flex-row">
+    <div class="afnan6">
+      <%rand.forEach((product) =>{%>
+       
+       <div class=" d-flex flex-column ml-4 mb-4">
+         <div class="card-container10 rip d-flex flex-column text-dark">
+           <img src="<%=product.images%>" class="i5"/>
+           <div class="d-flex flex-row">
+             <h3 style="font-size :25px; font-weight :bold; padding-top :4px; font-family:Arial, sans-serif;">Name:</h3>
+             <span style="font-size :20px;  padding :4px;"><%=product.title%></span><br>
+           </div>
+           
+            <div class="d-flex flex-row">
+             <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Price : </h3>
+             <span style="font-size :20px; ;  padding :4px;"><%=product.price%></span><br>
+            </div>
+            <div class="d-flex flex-row">
+             <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Product Availiability : </h3>
+             <span style="font-size :20px; ;  padding :4px;"><%=product.availability%></span><br>
+            </div>
+            <div class="d-flex flex-row">
+             <h3 style="font-size :25px; font-weight :bold; padding-top :4px;">Category : </h3>
+             <span style="font-size :20px; ;  padding :4px;"><%=product.category%></span><br>
+            </div>
+            <form action="/productpage" method="post">
+               <button name="green" value="<%=product.productid%>" class="user-link btn btn-success">View more</button>
+             </form> 
+         </div>
+       </div>
+
+  <%})%>
+ </div>
+ 
+</div>
+
+  
+
+
+  <div class="d-flex flex-row justify-content-center mb-5">
+      <form action="/craftmen" method="get">
+      <button class="button btn btn-danger">Back to Home</button>
+    </form>
+    </div>
+  </div>
+  <%- include('partials/footer') %>
+  </div>
